@@ -12,7 +12,7 @@ variable "location" {
 
 variable "node_count" {
   type    = number
-  default = 2
+  default = 1
 }
 
 variable "node_vm_size" {
