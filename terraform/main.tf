@@ -34,6 +34,9 @@ module "aks" {
   resource_group_name = var.resource_group_name
   location            = var.location
   dns_prefix          = "demoaks"
+
+  node_count = var.node_count      
+  node_vm_size = var.node_vm_size
 }
 
 module "acr" {
