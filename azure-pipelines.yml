@@ -76,7 +76,7 @@ stages:
             $(System.DefaultWorkingDirectory)/$(helmChartPath) \
             --set image.repository=$(containerRegistry)/$(imageRepository) \
             --set image.tag=$(tag) \
-            --wait
+            --wait --timeout 10m
           
           echo "Waiting for rollout..."
           kubectl rollout status deployment/$(helmReleaseName)
