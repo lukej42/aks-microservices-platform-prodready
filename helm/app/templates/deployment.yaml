@@ -1,19 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: lgexample
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: lgexample
     spec:
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  app: {{ .Release.Name }}
+                  app: lgexample
               topologyKey: kubernetes.io/hostname
       containers:
         - name: app
