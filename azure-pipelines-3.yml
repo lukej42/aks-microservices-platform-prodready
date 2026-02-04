@@ -7,7 +7,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '0718f068-294d-4037-9429-e47baf402ec1'
+  dockerRegistryServiceConnection: 'eb9e3863-7a4a-4a07-ad1b-f0686ce846a6'
   imageRepository: 'lgexample654'
   containerRegistry: 'lgexample654.azurecr.io'
   dockerfilePath: '**/Dockerfile'
@@ -59,12 +59,12 @@ stages:
     - task: AzureCLI@2
       displayName: Deploy Helm Chart to AKS
       inputs:
-        azureSubscription: 'Azure subscription 1(525c7c1f-f5e9-4bf4-8d7a-5b7a06889a12)'
+        azureSubscription: 'Azure subscription 1(1)(525c7c1f-f5e9-4bf4-8d7a-5b7a06889a12)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
           az aks get-credentials --resource-group $(aksResourceGroup) --name $(aksClusterName)
-
+          
           if [ "$(Build.SourceBranchName)" = "dev" ]; then
             VALUES_FILE="$(helmChartPath)/values-dev.yaml"
           elif [ "$(Build.SourceBranchName)" = "stage" ]; then
@@ -75,13 +75,13 @@ stages:
             echo "No environment mapping for branch $(Build.SourceBranchName)"
             exit 1
           fi
-
+          
           echo "Using values file: $VALUES_FILE"
-
+          
           helm upgrade --install $(helmReleaseName) $(helmChartPath) \
             -f $VALUES_FILE \
             --set image.tag=$(Build.BuildId) \
             --wait
-
+          
           kubectl rollout status deployment/$(helmReleaseName)
 
