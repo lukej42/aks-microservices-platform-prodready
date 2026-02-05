@@ -79,6 +79,9 @@ stages:
         chartType: 'FilePath'
         chartPath: '$(helmChartPath)'
         releaseName: '$(helmReleaseName)'
-        overrideValues: 'image.tag=$(Build.BuildId)'
+        install: true
+        waitForExecution: true
         valueFile: '$(ValuesFilePath)'
+        # ADDED image.repository BELOW
+        overrideValues: 'image.repository=$(containerRegistry)/$(imageRepository),image.tag=$(Build.BuildId)'
         arguments: '--atomic --timeout 5m0s'
