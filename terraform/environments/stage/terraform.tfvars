@@ -15,6 +15,6 @@ vm-name = "stage-vm"
 vm-size = "Standard_B1s"
 keyvaultname = "kv-stage-secrets1992"
 nsgname = "stage_nsg"
-acr_name = "lgexample654"
+acr_name = "lgstage654"
 acr_sku = "Basic"
 node_count = 2
