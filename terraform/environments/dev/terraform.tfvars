@@ -1,5 +1,5 @@
-subscription_id = "525c7c1f-f5e9-4bf4-8d7a-5b7a06889a12"
-tenant_id = "b38a3c51-d056-4b51-90d0-6027238fb894"
+subscription_id = "<subscription id>"
+tenant_id = "<tenant id>"
 spobject_id = "<spobject id>"
 storage_account_name     = "devstorageacct1992"
 location                 = "uksouth"
@@ -15,6 +15,6 @@ vm-name = "dev-vm"
 vm-size = "Standard_B1s"
 keyvaultname = "kv-devsecrets1992"
 nsgname = "dev_nsg"
-acr_name = "lgexample654"
+acr_name = "lgstage654"
 acr_sku = "Basic"
-node_count = 2
+node_count = 1
