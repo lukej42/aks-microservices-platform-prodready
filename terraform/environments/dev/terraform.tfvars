@@ -15,6 +15,6 @@ vm-name = "dev-vm"
 vm-size = "Standard_B1s"
 keyvaultname = "kv-devsecrets1992"
 nsgname = "dev_nsg"
-acr_name = "lgstage654"
+acr_name = "lgdev654"
 acr_sku = "Basic"
 node_count = 1
