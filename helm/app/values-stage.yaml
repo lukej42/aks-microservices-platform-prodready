@@ -1,5 +1,5 @@
 image:
-  repository: lgstage654.azurecr.io/myapp
+  repository: lgexample654.azurecr.io/myapp
   tag: "1.0"
   pullPolicy: IfNotPresent
 

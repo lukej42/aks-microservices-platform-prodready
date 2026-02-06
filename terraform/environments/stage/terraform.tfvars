@@ -1,4 +1,4 @@
-subscription_id = "<subscription id>"
+subscription_id = "<subscription_id"
 tenant_id = "<tenant id>"
 spobject_id = "<spobject id>"
 storage_account_name     = "stagestorageacct1992"
@@ -15,6 +15,6 @@ vm-name = "stage-vm"
 vm-size = "Standard_B1s"
 keyvaultname = "kv-stage-secrets1992"
 nsgname = "stage_nsg"
-acr_name = "lgstage654"
+acr_name = "lgexample654"
 acr_sku = "Basic"
 node_count = 2
