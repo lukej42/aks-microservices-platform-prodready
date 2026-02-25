@@ -1,6 +1,12 @@
 # Build Docker image, push to ACR, then deploy to AKS via Helm
 
-trigger: none
+trigger:
+  branches:
+    include:
+      - dev
+      - qa
+      - stage
+      - main
 
 resources:
 - repo: self
