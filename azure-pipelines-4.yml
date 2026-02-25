@@ -1,13 +1,19 @@
 # Build Docker image, push to ACR, then deploy to AKS via Helm
 
-trigger: none
+trigger:
+  branches:
+    include:
+      - dev
+      - qa
+      - stage
+      - main
 
 resources:
 - repo: self
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '6bacfcbc-54c8-403c-ab80-637b34e9c660'
+  dockerRegistryServiceConnection: '4b42b178-4878-4310-aac5-82e4c4e88e87'
   imageRepository: 'lgexample654'
   containerRegistry: 'lgexample654.azurecr.io'
   dockerfilePath: '**/Dockerfile'
