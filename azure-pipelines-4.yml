@@ -13,7 +13,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'd6233099-6b22-4012-905b-bf05dff97466'
+  dockerRegistryServiceConnection: 'd8badb41-27d8-4a43-90e3-0a5b056eaade'
   imageRepository: 'lgexample654'
   containerRegistry: 'lgexample654.azurecr.io'
   dockerfilePath: '**/Dockerfile'
@@ -87,9 +87,6 @@ stages:
         chartType: 'FilePath'
         chartPath: '$(helmChartPath)'
         releaseName: '$(helmReleaseName)'
-        install: true
-        waitForExecution: true
-        valueFile: '$(ValuesFilePath)'
-        # ADDED image.repository BELOW
         overrideValues: 'image.repository=$(containerRegistry)/$(imageRepository),image.tag=$(Build.BuildId)'
+        valueFile: '$(ValuesFilePath)'
         arguments: '--atomic --timeout 5m0s'
